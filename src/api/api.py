@@ -1,12 +1,12 @@
-
 import pickle
 
-import lightgbm
+# import lightgbm
 import numpy as np
-import uvicorn
+
+# import uvicorn
 from fastapi import FastAPI
 
-from schemas import Data
+from .schemas import Data
 
 app = FastAPI()
 
@@ -18,6 +18,14 @@ features = pickle.load(open("features.pickle", "rb"))
 
 @app.post("/predict")
 async def predict(data: Data):
+    """_summary_
+
+    Args:
+        data (Data): _description_
+
+    Returns:
+        _type_: _description_
+    """
 
     # Extract data in correct order
     data_dict = data.dict()
