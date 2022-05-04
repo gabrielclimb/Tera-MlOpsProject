@@ -10,12 +10,12 @@ class Data(BaseModel):
         BaseModel (_type_): _description_
     """
 
-    satisfaction_level: float
-    last_evaluation: float
-    number_project: float
-    average_montly_hours: float
-    time_spend_company: float
-    Work_accident: float
-    promotion_last_5years: float
-    sales: str
-    salary: str
+    MedInc: float
+    HouseAge: float
+    AveRooms: float
+    AveBedrms: float
+    Population: float
+    AveOccup: float
+    Latitude: float
+    Longitude: float
+    AvgBedsPerRoom: float
