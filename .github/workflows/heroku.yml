@@ -3,9 +3,10 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
+  needs: Pylint
   build:
     runs-on: ubuntu-latest
     steps:
