@@ -13,7 +13,7 @@ model = joblib.load("src/model/regressor.gzip")
 app = FastAPI()
 
 
-@app.post("/")
+@app.get("/")
 def hello() -> str:
     """just a standard route
 
