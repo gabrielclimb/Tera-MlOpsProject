@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Pylint"]
+    branches: [main]
+    types: 
+      - completed
 
 jobs:
-  needs: Pylint
   build:
     runs-on: ubuntu-latest
     steps:
