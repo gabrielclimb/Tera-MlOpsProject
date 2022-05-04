@@ -93,7 +93,8 @@ disable=raw-checker-failed,
         use-symbolic-message-instead,
         too-few-public-methods,
         missing-module-docstring,
-        consider-using-with
+        consider-using-with,
+        invalid-name
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
