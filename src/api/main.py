@@ -13,6 +13,11 @@ model = joblib.load("src/model/regressor.gzip")
 app = FastAPI()
 
 
+@app.post("/")
+def hello():
+    return "Hello World, go to /docs"
+
+
 @app.post("/predict")
 def predict(data: Data):
     """_summary_
