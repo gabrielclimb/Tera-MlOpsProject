@@ -1,9 +1,9 @@
-name: Pylint
+name: CI
 
 on: [push]
 
 jobs:
-  build:
+  pylint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,4 +22,13 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-  
+  heroku:
+    needs: pylint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "test-fastapi-model" #Must be unique in Heroku
+          heroku_email: "gabrielclimb@gmail.com"
