@@ -14,7 +14,12 @@ app = FastAPI()
 
 
 @app.post("/")
-def hello():
+def hello() -> str:
+    """just a standard route
+
+    Returns:
+        str: hello world
+    """
     return "Hello World, go to /docs"
 
 
