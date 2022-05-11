@@ -9,7 +9,6 @@ from .schemas import Data
 # Initialize files
 model = joblib.load("src/model/regressor.gzip")
 
-
 app = FastAPI()
 
 
@@ -24,7 +23,7 @@ def hello() -> str:
 
 
 @app.post("/predict")
-def predict(data: Data):
+def predict(data: Data) -> dict:
     """_summary_
 
     Args:
@@ -42,18 +41,6 @@ def predict(data: Data):
 
     return {"prediction": prediction[0]}
 
-
-# {
-#     "MedInc": 1.6812,
-#     "HouseAge": 25.0,
-#     "AveRooms": 4.192200557103064,
-#     "AveBedrms": 1.0222841225626742,
-#     "Population": 1392.0,
-#     "AveOccup": 3.8774373259052926,
-#     "Latitude": 36.06,
-#     "Longitude": -119.01,
-#     "AvgBedsPerRoom": 0.24385382059800667,
-# }
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
