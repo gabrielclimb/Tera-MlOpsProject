@@ -3,8 +3,8 @@ import pandas as pd
 import uvicorn
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
-from helpers.model import load_model
-from models import Data
+from .helpers.model import load_model
+from .models import Data
 from typing import Dict
 
 model = load_model("artifacts/model_2023-08-17-02-03.gzip")
